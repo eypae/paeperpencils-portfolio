@@ -10,7 +10,7 @@ const HeroSection = () => {
     const titleText = "Hi. I'm En Yang.";
 
     return (
-        <section id={ "home" } className="relative pt-64 pb-24 px-6 flex items-center justify-center overflow-hidden">
+        <section id={ "home" } className="relative pt-64 pb-24 px-6 flex items-center justify-center lg:overflow-hidden">
             <motion.div
                 animate={ { rotate: 360 } }
                 transition={ { duration: 30, repeat: Infinity, ease: "linear" } }
