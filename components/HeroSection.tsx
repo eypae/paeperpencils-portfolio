@@ -58,19 +58,19 @@ const HeroSection = () => {
                         {/* We use an offset version of the text to mimic the solid drop shadow */ }
                         <div style={ { filter: "drop-shadow(0px 15px 0px rgba(0,0,0,0.15))" } }>
                             {/* Outer Black Stroke Layer */ }
-                            <h1 className="absolute inset-0 text-7xl md:text-9xl lg:text-[128px] font-['Sugar_Peachy'] text-black whitespace-nowrap leading-none tracking-tight pointer-events-none"
+                            <h1 className="absolute inset-0 text-7xl md:text-9xl lg:text-[128px] font-sugar-peachy text-black whitespace-nowrap leading-none tracking-tight pointer-events-none"
                                 style={ { WebkitTextStroke: "36px black" } }>
                                 { titleText }
                             </h1>
 
                             {/* Inner White Outline Layer */ }
-                            <h1 className="absolute inset-0 text-7xl md:text-9xl lg:text-[128px] font-['Sugar_Peachy'] text-white whitespace-nowrap leading-none tracking-tight pointer-events-none"
+                            <h1 className="absolute inset-0 text-7xl md:text-9xl lg:text-[128px] font-sugar-peachy text-white whitespace-nowrap leading-none tracking-tight pointer-events-none"
                                 style={ { WebkitTextStroke: "30px white" } }>
                                 { titleText }
                             </h1>
 
                             {/* Main Text Layer */ }
-                            <h1 className="relative text-7xl md:text-9xl lg:text-[128px] font-['Sugar_Peachy'] whitespace-nowrap leading-none tracking-tight transition-colors duration-300"
+                            <h1 className="relative text-7xl md:text-9xl lg:text-[128px] font-sugar-peachy whitespace-nowrap leading-none tracking-tight transition-colors duration-300"
                                 style={ { color: isHovered ? "#2E3E10" : "#121212" } }>
                                 { titleText }
                             </h1>
@@ -90,7 +90,7 @@ const HeroSection = () => {
                         // Moved down by 16px (adjusted margins: -mt-10 to -mt-6, -mt-14 to -mt-10)
                         className="z-10 bg-[#a1bc98] px-8 py-3 lg:px-[40px] lg:py-[12px] rounded-[12px] border-3 border-black shadow-[0px_15px_0px_0px_rgba(0,0,0,0.2)] -mt-6 lg:mt-2 pointer-events-none"
                     >
-                        <p className="font-['Sugar_Peachy'] text-4xl lg:text-[84px] text-white leading-none tracking-tight">
+                        <p className="font-sugar-peachy text-4xl lg:text-[84px] text-white leading-none tracking-tight">
                             Designer & Doodler.
                         </p>
                     </motion.div>

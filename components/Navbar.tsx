@@ -24,7 +24,7 @@ const Navbar = () => {
                     const isActive = pathname === href;
                     return (
                         <Link key={ label } href={ href }
-                              className={ "group relative font-sugar-peachy text-[21px] font-bold text-black" }>
+                              className={ "group relative font-quicksand text-[21px] font-bold text-black" }>
                             { label }
                             {/* Active underline */ }
                             { isActive && (<span
