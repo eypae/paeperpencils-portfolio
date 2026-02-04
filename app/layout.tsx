@@ -9,7 +9,7 @@ const quickSand = Quicksand({
 });
 
 const sugarPeachy = localFont({
-    src: "./fonts/Sugarpeachy-Medium.otf",
+    src: "./fonts/Sugarpeachy-Medium.woff2",
     variable: "--font-sugar-peachy",
     display: "swap",
 });
