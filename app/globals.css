@@ -111,11 +111,31 @@
             -webkit-text-stroke: 14px white; /* -6px */
         }
     }
+
+    .cursor {
+        background-color: #121212;
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
 }
 
 @layer base {
-    * {
-        @apply border-border outline-ring/50;
+    *,
+    *::before,
+    *::after {
+        cursor: none !important;
+    }
+
+    @media (pointer: coarse) {
+        *,
+        *::before,
+        *::after {
+            cursor: auto !important;
+        }
     }
 
     body {

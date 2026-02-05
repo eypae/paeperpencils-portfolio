@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
 import { svgPaths } from "../lib/constants";
+import CustomCursor from "./CustomCursor";
 
 const HeroSection = () => {
     const [isHovered, setIsHovered] = useState(false);
