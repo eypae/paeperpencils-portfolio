@@ -2,19 +2,18 @@
 
 import React from "react";
 import Link from "next/link";
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const SOCIAL_LINKS = [
-    { label: "Instagram", href: "#" },
-    { label: "LinkedIn", href: "#" },
-    { label: "GitHub", href: "#" },
-    { label: "CV", href: "#" },
+    { label: "Instagram", href: "https://www.instagram.com/paeperpencils/", icon: FaInstagram },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/pae-en-yang/", icon: FaLinkedin },
+    { label: "GitHub", href: "https://github.com/eypae", icon: FaGithub },
 ];
 
 const Footer = () => {
     return (
         <footer
-            className="max-w-6xl mx-auto px-6 pt-20 pb-24 flex flex-col md:flex-row justify-between items-start gap-12 text-[#2e3e10]">
+            className="max-w-6xl mx-auto px-6 pt-20 pb-32 flex flex-col md:flex-row justify-between items-start gap-12 text-[#2e3e10]">
 
             {/* Copyright */ }
             <div className="flex font-bold items-center gap-2">
@@ -30,12 +29,16 @@ const Footer = () => {
 
                 <ul className="font-quicksand font-bold text-xl space-y-4 list-none">
                     { SOCIAL_LINKS.map((link) => (
-                        <li key={ link.label } className={ "flex items-center gap-2" }>
-                            <FaInstagram className={ "h-6 w-6" }/>
+                        <li key={ link.label }
+                            className={ "hover:opacity-60 transition-opacity flex items-center gap-2" }>
+
                             <Link
                                 href={ link.href }
-                                className="hover:opacity-60 transition-opacity"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={"flex items-center gap-2"}
                             >
+                                <link.icon className={ "h-6 w-6" }/>
                                 { link.label }
                             </Link>
                         </li>
