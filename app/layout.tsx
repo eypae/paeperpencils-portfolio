@@ -30,7 +30,9 @@ export default function RootLayout({
         <body
             className={ `${ quickSand.variable } ${ sugarPeachy.variable } min-h-screen antialiased` }
         >
-        <CustomCursor/>
+        <div className="hidden lg:block">
+            <CustomCursor/>
+        </div>
         { children }
         </body>
         </html>

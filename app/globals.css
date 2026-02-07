@@ -124,17 +124,11 @@
 }
 
 @layer base {
-    *,
-    *::before,
-    *::after {
-        cursor: none !important;
-    }
-
-    @media (pointer: coarse) {
+    @media (min-width: 1024px) and (pointer: fine) {
         *,
         *::before,
         *::after {
-            cursor: auto !important;
+            cursor: none !important;
         }
     }
 

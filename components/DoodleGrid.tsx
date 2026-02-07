@@ -13,18 +13,18 @@ const DOODLES = [
     { id: 2, src: "/images/katong-romance.png", label: "Katong Romance" },
     { id: 8, src: "/images/ribbitmobile.png", label: "Ribbitmobile" },
     { id: 3, src: "/images/svt-in-paris.jpg", label: "Seventeen in Paris" },
-    { id: 6, src: "/images/simple-comforts.jpg", label: "Simple Comforts" },
+    { id: 6, src: "/images/simple-comforts.jpg", label: "Simple Comforts" }
 ];
 
 const DoodleGrid = () => {
     return (
-        <section id="doodles" className="lg:mt-[156px] relative">
-            <h2 className="font-quicksand font-bold text-4xl text-[#2e3e10] mb-12">
+        <section id="doodles" className="lg:mt-39 relative">
+            <h2 className="font-quicksand font-bold text-4xl text-[#2e3e10] mb-6">
                 I doodle. A lot.
             </h2>
 
             <ResponsiveMasonry columnsCountBreakPoints={ { 350: 1, 750: 2, 900: 3 } }
-                               gutterBreakPoints={ { 350: "12px", 750: "16px", 900: "16px" } }>
+                               gutterBreakPoints={ { 350: "12px", 750: "16px", 900: "24px" } }>
                 <Masonry>
                     { DOODLES.map((doodle, index) => (
                         <motion.div
@@ -37,7 +37,7 @@ const DoodleGrid = () => {
                         >
                             {/* Card Container */ }
                             <div
-                                className="relative rounded-[10px] overflow-hidden border-[5px] border-black shadow-[0_12px_0_rgba(0,0,0,0.15)] transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-[0_15px_0_rgba(0,0,0,0.2)]">
+                                className="relative rounded-[10px] overflow-hidden border-4 border-black shadow-[0_12px_0_rgba(0,0,0,0.15)] transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-[0_15px_0_rgba(0,0,0,0.2)]">
 
                                 {/* Image Section */ }
                                 <div className="relative w-full">
@@ -51,7 +51,7 @@ const DoodleGrid = () => {
 
                                     {/* Gradient Overlay */ }
                                     <div
-                                        className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.08)] to-[rgba(0,0,0,0.2)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                                        className="absolute inset-0 bg-linear-to-b from-[rgba(0,0,0,0.08)] to-[rgba(0,0,0,0.2)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                                     />
                                 </div>
 

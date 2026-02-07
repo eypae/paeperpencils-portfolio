@@ -11,7 +11,8 @@ const HeroSection = () => {
     const titleText = "Hi. I'm En Yang.";
 
     return (
-        <section id={ "home" } className="relative pt-64 pb-24 px-6 flex items-center justify-center lg:overflow-hidden">
+        <section id={ "home" }
+                 className="relative pt-36 lg:pt-64 pb-24 px-6 lg:overflow-hidden">
             <motion.div
                 animate={ { rotate: 360 } }
                 transition={ { duration: 30, repeat: Infinity, ease: "linear" } }
@@ -32,7 +33,8 @@ const HeroSection = () => {
                 </svg>
             </motion.div>
 
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16 max-w-7xl mx-auto w-full">
+            <div
+                className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16 max-w-7xl mx-auto w-full">
                 {/* Paeperpencils Logo */ }
                 <motion.div
                     initial={ { x: -40, opacity: 0 } }

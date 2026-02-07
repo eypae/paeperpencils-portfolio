@@ -24,14 +24,14 @@ const Navbar = () => {
                     const isActive = pathname === href;
                     return (
                         <Link key={ label } href={ href }
-                              className={ "group relative font-quicksand text-[21px] font-bold text-black" }>
+                              className={ "group relative font-quicksand text-[21px] font-bold " }>
                             { label }
                             {/* Active underline */ }
                             { isActive && (<span
                                 className={ "absolute -bottom-1 left-0 right-0 h-[2px] rounded-full bg-black" }/>) }
                             {/* Hover underline */ }
                             <span
-                                className={ "absolute -bottom-1 left-0 right-0 h-[2px] origin-left scale-x-0 rounded-full bg-black transition-transform duration-300 group-hover:scale-x-100" }/>
+                                className={ "absolute -bottom-1 left-0 right-0 h-[2px] origin-left scale-x-0 rounded-full bg-[#2e3e10] transition-transform duration-300 group-hover:scale-x-100" }/>
                         </Link>
                     );
                 }) }
