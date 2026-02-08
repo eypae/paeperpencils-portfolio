@@ -24,6 +24,22 @@ const sugarPeachy = localFont({
 export const metadata: Metadata = {
     title: "En Yang • Designer & Doodler",
     description: "The portfolio of En Yang, Product Designer.",
+
+    openGraph: {
+        title: "En Yang • Designer & Doodler",
+        description: "The portfolio of En Yang, Product Designer.",
+        url: "https://paeperpencils-portfolio.vercel.app",
+        siteName: "En Yang",
+        images: [
+            {
+                url: "https://paeperpencils-portfolio.vercel.app/images/enyang-logo.png", // must be in /public
+                width: 666,
+                height: 703,
+                alt: "En Yang – Designer & Doodler",
+            },
+        ],
+        type: "website",
+    },
 };
 
 export default function RootLayout({ children, }: Readonly<{
