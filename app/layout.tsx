@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Quicksand } from "next/font/google";
+import { Quicksand, League_Spartan } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import CustomCursor from "../components/CustomCursor";
+import Navbar from "../components/Navbar";
 
 const quickSand = Quicksand({
     variable: "--font-quicksand",
+    subsets: ["latin"],
+});
+
+const leagueSpartan = League_Spartan({
+    variable: "--font-league-spartan",
     subsets: ["latin"],
 });
 
@@ -20,16 +26,14 @@ export const metadata: Metadata = {
     description: "The portfolio of En Yang, Product Designer.",
 };
 
-export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
+export default function RootLayout({ children, }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
         <html lang="en">
-        <body
-            className={ `${ quickSand.variable } ${ sugarPeachy.variable } min-h-screen antialiased` }
-        >
+        <body className={ `${ quickSand.variable } ${ leagueSpartan.variable } 
+            ${ sugarPeachy.variable } min-h-screen antialiased` }>
+        <Navbar/>
         <div className="hidden lg:block">
             <CustomCursor/>
         </div>

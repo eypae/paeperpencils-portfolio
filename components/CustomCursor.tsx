@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import React from 'react';
 
 const CustomCursor = () => {
@@ -22,7 +23,7 @@ const CustomCursor = () => {
             const target = e.target as HTMLElement;
 
             // Check if the element itself or any parent is a link/button/clickable
-            if (target.closest('a, button,[role="button"]')) {
+            if (target.closest('a, button,[role="button"], [data-clickable]')) {
                 setIsClickable(true);
             } else {
                 setIsClickable(false);
@@ -35,7 +36,9 @@ const CustomCursor = () => {
         const render = () => {
             const offsetX = 16; // center horizontally
             const offsetY = 4; // center vertically
-            cursor.style.transform = `translate3d(${ pos.current.x - offsetX }px, ${ pos.current.y - offsetY }px, 0)`;
+            cursor.style.transform = `translate3d(
+                ${ pos.current.x - offsetX }px, 
+                ${ pos.current.y - offsetY }px, 0)`;
             rafId = requestAnimationFrame(render);
         };
 
@@ -53,13 +56,13 @@ const CustomCursor = () => {
     }, []);
 
     return (
-        <img
+        <Image
             ref={ cursorRef }
             src={ isClickable ? '/images/pointer.png' : '/images/cursor.png' }
-            className="fixed top-0 left-0 z-9999 pointer-events-none w-8 h-8"
-            style={ { transform: 'translate3d(-50%, -50%, 0)' } }
+            className="fixed top-0 left-3.5 z-9999 pointer-events-none"
             alt="Custom cursor"
-        />
+            width={ 32 }
+            height={ 32 }/>
     );
 };
 

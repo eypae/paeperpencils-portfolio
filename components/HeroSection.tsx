@@ -43,7 +43,7 @@ const HeroSection = () => {
                     className="relative w-44 h-44 mt-4 md:w-56 md:h-56 lg:w-[280px] lg:h-[280px] shrink-0"
                 >
                     <img
-                        src={ "/images/enyang-logo.png" }
+                        src={ "/images/enyang-logo-shadow.png" }
                         alt="En Yang Character"
                     />
                 </motion.div>
