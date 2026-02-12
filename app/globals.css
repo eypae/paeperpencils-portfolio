@@ -125,7 +125,7 @@
 }
 
 @layer base {
-    @media (min-width: 1024px) and (pointer: fine) {
+    @media (min-width: 1024px) and (any-pointer: fine) {
         *,
         *::before,
         *::after {
