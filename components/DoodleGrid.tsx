@@ -77,8 +77,7 @@ const DoodleGrid = ({ onSelectDoodle }: DoodleGridProps) => {
                                         doodle.label === "Devastation of Baal"
                                             ? "text-[48px]"
                                             : "text-[56px]"
-                                    }
-                                    `}
+                                    }`}
                                 >
                                     {doodle.label}
                                 </p>
