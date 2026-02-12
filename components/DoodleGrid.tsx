@@ -60,13 +60,12 @@ const DoodleGrid = ({ onSelectDoodle }: DoodleGridProps) => {
                                         opacity-0
                                         group-hover:opacity-100
                                         transition-opacity duration-300
-                                        pointer-events-none
                                     "
                                 />
                             </div>
 
                             {/* Sliding Label */}
-                            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                            <div className="absolute inset-0 overflow-hidden">
                                 <p
                                     className={`
                                         absolute left-[4.65%] bottom-0
