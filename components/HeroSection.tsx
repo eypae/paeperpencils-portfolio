@@ -12,7 +12,7 @@ const HeroSection = () => {
 
     return (
         <section id={ "home" }
-                 className="relative pt-36 lg:pt-64 pb-24 px-6">
+                 className="relative pt-36 lg:pt-64 pb-24 px-6 z-3">
             <motion.div
                 animate={ { rotate: 360 } }
                 transition={ { duration: 30, repeat: Infinity, ease: "linear" } }

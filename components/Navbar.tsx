@@ -20,7 +20,7 @@ const Navbar = () => {
 
     return (
         <nav
-            className="fixed top-0 left-0 right-0 z-50 bg-[#d2dcb6]/90 text-[#2e3e10] backdrop-blur-sm border-b-2 border-black">
+            className="fixed top-0 left-0 right-0 z-4 bg-[#d2dcb6]/90 text-[#2e3e10] backdrop-blur-sm border-b-2 border-black">
             <div className="mx-auto flex h-20 max-w-6xl items-center justify-center gap-12 px-6">
                 { navItems.map(({ label, href }) => {
                     const isActive = pathname === href;

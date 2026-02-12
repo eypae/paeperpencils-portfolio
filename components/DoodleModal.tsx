@@ -38,94 +38,99 @@ const DoodleModal = ({ isOpen, onClose, selectedDoodle, allDoodles, onSelect, on
                     initial={ { opacity: 0 } }
                     animate={ { opacity: 1 } }
                     exit={ { opacity: 0 } }
-                    className={ "fixed inset-0 z-8000 flex items-center " +
+                    className={ "fixed inset-0 z-50 flex items-center " +
                         "justify-center md:p-8 bg-black/75 backdrop-blur-md" }
                     onClick={ onClose }
                 >
-                    {/* Close Button */ }
+                    {/* Close Button */}
                     <button onClick={ (e) => {
                         e.stopPropagation();
                         onClose();
-                    } } className="fixed top-3 right-3 lg:top-6 lg:right-6 z-9000 rounded-full bg-white/10 p-2
+                    } } className="fixed top-3 right-3 lg:top-6 lg:right-6 z-[60] rounded-full bg-white/10 p-2
                     text-white transition-transform hover:scale-110 hover:bg-white/20 cursor-pointer"
                             aria-label="Close modal">
-                        {/* mobile + tablet */ }
                         <X size={ 24 } strokeWidth={ 2 } className="lg:hidden"/>
-
-                        {/* lg and up */ }
                         <X size={ 32 } strokeWidth={ 2 } className="hidden lg:block"/>
                     </button>
 
-                    {/* Navigation - Prev */ }
+                    {/* Navigation - Prev */}
                     <button onClick={ (event) => {
                         event.stopPropagation();
                         onPrev();
-                    } } className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-2
-                    text-white/50 hover:text-white transition-colors z-110">
+                    } } className="hidden md:block absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-2
+                    text-white/50 hover:text-white transition-colors z-[60]">
                         <ChevronLeft size={ 48 }/>
                     </button>
 
-                    {/* Navigation - Next */ }
+                    {/* Navigation - Next */}
                     <button onClick={ (event) => {
                         event.stopPropagation();
                         onNext();
-                    } } className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-2
-                    text-white/50 hover:text-white transition-colors z-110">
+                    } } className="hidden md:block absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-2
+                    text-white/50 hover:text-white transition-colors z-[60]">
                         <ChevronRight size={ 48 }/>
                     </button>
 
-                    {/* Modal Container */ }
+                    {/* Modal Container */}
                     <motion.div
                         initial={ { scale: 0.95, opacity: 0 } }
                         animate={ { scale: 1, opacity: 1 } }
                         exit={ { scale: 0.95, opacity: 0 } }
-                        className={ "bg-white w-fit max-w-[95vw] h-fit max-h-[90vh] flex flex-col " +
-                            "md:flex-row overflow-hidden shadow-2xl relative" }
+                        // md:w-fit ensures the modal only grows to the combined width of image + sidebar
+                        className={ "bg-white w-full md:w-fit max-w-[95vw] max-h-[90vh] flex flex-col " +
+                            "md:flex-row overflow-y-auto md:overflow-hidden shadow-2xl relative rounded-lg" }
                         onClick={ (event) => event.stopPropagation() }>
-                        <div className={ "md:min-h-0 min-h-100 bg-[#fafafa] " +
-                            "flex items-center justify-center relative group/img" }>
-                            {/* Left Side: Image Section */ }
+
+                        {/* Left Side: Image Wrapper */}
+                        <div className={ "relative bg-[#fafafa] flex items-center justify-center group/img " +
+                            // Fixed: md:w-fit and md:max-w-none allow the wrapper to collapse to the image's width
+                            "w-full md:w-fit md:max-w-none flex-none overflow-hidden" }>
+
                             <Image
                                 src={ selectedDoodle.src }
                                 alt={ selectedDoodle.label }
                                 width={ 1000 }
                                 height={ 1000 }
                                 priority
-                                className="max-h-[70vh] md:max-h-[90vh] w-auto object-contain"
+                                // Fixed: "block" and "md:h-[90vh]" force the height, letting "w-auto" resolve the correct width
+                                className="max-h-[60vh] md:max-h-[90vh] w-auto h-auto object-contain block"
                             />
+
+                            {/* Mobile/Hover Nav Buttons */}
                             <button onClick={ (event) => {
                                 event.stopPropagation();
                                 onPrev();
                             } } className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black/50
-                            hover:text-black transition-all rounded-full p-1.5 shadow-md opacity-0 group-hover/img:opacity-100">
+                            hover:text-black transition-all rounded-full p-1.5 shadow-md opacity-100 md:opacity-0 md:group-hover/img:opacity-100">
                                 <ChevronLeft size={ 20 }/>
                             </button>
                             <button onClick={ (event) => {
                                 event.stopPropagation();
                                 onNext();
                             } } className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black/50
-                            hover:text-black transition-all rounded-full p-1.5 shadow-md opacity-0 group-hover/img:opacity-100">
+                            hover:text-black transition-all rounded-full p-1.5 shadow-md opacity-100 md:opacity-0 md:group-hover/img:opacity-100">
                                 <ChevronRight size={ 20 }/>
                             </button>
 
-                            {/* Pagination Dots */ }
+                            {/* Pagination Dots */}
                             <div className={ "absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-20" }>
                                 { allDoodles.map((doodle, index) => (
                                     <button key={ doodle.id } onClick={ (event) => {
                                         event.stopPropagation();
                                         onSelect(doodle.id);
                                     } } className={ `w-1.5 h-1.5 rounded-full transition-all cursor-pointer ${
-                                        index === currentIndex ? "bg-white scale-125" : "bg-white/40 hover:bg-white/60"
+                                        index === currentIndex ? "bg-black/60 scale-125" : "bg-black/20 hover:bg-black/40"
                                     }` } aria-label={ `Go to doodle ${ index + 1 }` }/>
                                 )) }
                             </div>
                         </div>
-                        {/* Right Side: Info Section */ }
-                        <div className={ "w-full md:w-87.5 lg:w-100 flex flex-col " +
-                            "bg-white border-l border-gray-100 shrink-0" }>
-                            {/* Header */ }
+
+                        {/* Right Side: Info Section */}
+                        <div className={ "w-full md:w-[350px] lg:w-[400px] flex flex-col " +
+                            "bg-white border-l border-gray-100 shrink-0 min-h-[200px]" }>
+                            {/* Header */}
                             <div className="p-4 border-b border-gray-100 flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full border-2 border-pink-500 p-0.5">
+                                <div className="w-10 h-10 rounded-full border-2 border-pink-500 p-0.5 shrink-0">
                                     <div className="w-full h-full rounded-full overflow-hidden bg-gray-50 flex
                                         items-center justify-center border border-gray-100">
                                         <Image src={ imgFrogChar } alt="Avatar"
@@ -145,17 +150,15 @@ const DoodleModal = ({ isOpen, onClose, selectedDoodle, allDoodles, onSelect, on
                                 </div>
                             </div>
 
-                            {/* Content / Caption */ }
+                            {/* Content / Caption */}
                             <div className="flex-1 p-4 pr-6 overflow-y-auto scrollbar-hide">
                                 <div className="flex gap-3 items-start mb-4">
-                                    <div
-                                        className="border-2 border-pink-500 p-1 w-10 h-10 rounded-full overflow-hidden shrink-0 bg-gray-50">
+                                    <div className="border-2 border-pink-500 p-1 w-10 h-10 rounded-full overflow-hidden shrink-0 bg-gray-50">
                                         <Image src={ imgFrogChar } alt="Avatar"
                                                className="w-full h-full object-contain -scale-x-100"/>
                                     </div>
                                     <div className="text-[14px] leading-snug">
-                                        <span
-                                            className="font-semibold mr-2 text-black font-league-spartan text-[16px]">paeperpencils</span>
+                                        <span className="font-semibold mr-2 text-black font-league-spartan text-[16px]">paeperpencils</span>
                                         <span className="font-['Quicksand'] text-gray-800 font-normal">
                                             { selectedDoodle.caption }
                                         </span>
@@ -169,18 +172,16 @@ const DoodleModal = ({ isOpen, onClose, selectedDoodle, allDoodles, onSelect, on
                                 </div>
                             </div>
 
-                            {/* Footer Links */ }
+                            {/* Footer Links */}
                             <Link href={ selectedDoodle.post_link } target="_blank" rel="noopener noreferrer"
                                   className="p-4 border-t border-gray-100 flex items-center justify-between
-                            group/footer cursor-pointer hover:bg-gray-50 transition-colors">
-                                <span
-                                    className="text-[16px] font-league-spartan font-medium text-gray-800">Go to post</span>
+                            group/footer cursor-pointer hover:bg-gray-50 transition-colors mt-auto">
+                                <span className="text-[16px] font-league-spartan font-medium text-gray-800">Go to post</span>
                                 <ExternalLink size={ 18 }
                                               className="text-gray-400 group-hover/footer:text-gray-900 transition-colors"/>
                             </Link>
                         </div>
                     </motion.div>
-
                 </motion.div>
             ) }
         </AnimatePresence>

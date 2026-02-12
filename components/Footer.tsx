@@ -13,7 +13,7 @@ const SOCIAL_LINKS = [
 const Footer = () => {
     return (
         <footer
-            className="xl:max-w-6xl lg:max-w-4xl mx-auto lg:px-6 px-[100] pt-20 pb-32 flex flex-col
+            className="xl:max-w-6xl lg:max-w-4xl mx-auto lg:px-6 px-10 pt-20 pb-32 flex flex-col
             md:flex-row justify-between items-start gap-12 text-[#2e3e10]">
 
             {/* Copyright */ }
