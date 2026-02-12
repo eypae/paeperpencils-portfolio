@@ -133,6 +133,14 @@
         }
     }
 
+    @media (any-pointer: coarse) {
+        *,
+        *::before,
+        *::after {
+            cursor: none !important;
+        }
+    }
+
     /* Hide scrollbar (Chrome, Safari, Edge) */
     ::-webkit-scrollbar {
         display: none;
