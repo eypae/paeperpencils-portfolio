@@ -56,7 +56,7 @@ const DoodleGrid = ({ onSelectDoodle }: DoodleGridProps) => {
                                         absolute inset-0
                                         bg-linear-to-b
                                         from-[rgba(0,0,0,0.08)]
-                                        to-[rgba(0,0,0,0.2)]
+                                        to-[rgba(46,62,16,0.2)]
                                         opacity-0
                                         group-hover:opacity-100
                                         transition-opacity duration-300
@@ -74,7 +74,7 @@ const DoodleGrid = ({ onSelectDoodle }: DoodleGridProps) => {
                                         transition-transform duration-300
                                         font-sugar-peachy leading-none text-white
                                         ${
-                                        doodle.label === "Devastation of Baal"
+                                        doodle.label === "Devastation of Baal" || doodle.label === "Seventeen in Paris"
                                             ? "text-[48px]"
                                             : "text-[56px]"
                                     }` }
