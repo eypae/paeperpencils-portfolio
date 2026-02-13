@@ -11,6 +11,7 @@ import Image from "next/image";
 import kasso from "@/public/images/kasso.png";
 import coffee from "@/public/images/making-coffee.png";
 import starbucks from "@/public/images/starbucks.png";
+import WebDesign from "../components/WebDesign";
 
 const Page = () => {
     const [selectedDoodleId, setSelectedDoodleId] = useState<number | null>(null);
@@ -61,6 +62,7 @@ const Page = () => {
             <main>
                 <HeroSection/>
                 <DoodleGrid onSelectDoodle={ setSelectedDoodleId }/>
+                <WebDesign/>
             </main>
             <Footer/>
 

@@ -12,24 +12,24 @@ interface DoodleGridProps {
 const DoodleGrid = ({ onSelectDoodle }: DoodleGridProps) => {
     return (
         <section id="doodles" className="lg:mt-39 xl:px-12 relative">
-            <h2 className="font-quicksand font-bold text-4xl text-[#2e3e10] mb-6">
+            <h2 className="font-quicksand font-bold text-4xl mb-6">
                 I doodle. A lot.
             </h2>
 
-            {/* Masonry via CSS Columns */}
+            {/* Masonry via CSS Columns */ }
             <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-                {DOODLES.map((doodle, index) => (
+                { DOODLES.map((doodle, index) => (
                     <motion.div
-                        key={doodle.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.05 }}
-                        viewport={{ once: true }}
+                        key={ doodle.id }
+                        initial={ { opacity: 0, y: 20 } }
+                        whileInView={ { opacity: 1, y: 0 } }
+                        transition={ { delay: index * 0.05 } }
+                        viewport={ { once: true } }
                         className="group relative break-inside-avoid cursor-pointer"
-                        onClick={() => onSelectDoodle(doodle.id)}
+                        onClick={ () => onSelectDoodle(doodle.id) }
                         data-clickable
                     >
-                        {/* Card Container */}
+                        {/* Card Container */ }
                         <div
                             className="
                                 relative rounded-[10px] overflow-hidden
@@ -40,17 +40,17 @@ const DoodleGrid = ({ onSelectDoodle }: DoodleGridProps) => {
                                 group-hover:shadow-[0_15px_0_rgba(0,0,0,0.2)]
                             "
                         >
-                            {/* Image Section */}
+                            {/* Image Section */ }
                             <div className="relative w-full">
                                 <Image
-                                    src={doodle.src}
-                                    alt={doodle.label}
-                                    width={500}
-                                    height={500}
+                                    src={ doodle.src }
+                                    alt={ doodle.label }
+                                    width={ 500 }
+                                    height={ 500 }
                                     className="w-full h-auto block"
                                 />
 
-                                {/* Gradient Overlay */}
+                                {/* Gradient Overlay */ }
                                 <div
                                     className="
                                         absolute inset-0
@@ -64,10 +64,10 @@ const DoodleGrid = ({ onSelectDoodle }: DoodleGridProps) => {
                                 />
                             </div>
 
-                            {/* Sliding Label */}
+                            {/* Sliding Label */ }
                             <div className="absolute inset-0 overflow-hidden">
                                 <p
-                                    className={`
+                                    className={ `
                                         absolute left-[4.65%] bottom-0
                                         transform translate-y-full
                                         group-hover:translate-y-[-10%]
@@ -77,14 +77,14 @@ const DoodleGrid = ({ onSelectDoodle }: DoodleGridProps) => {
                                         doodle.label === "Devastation of Baal"
                                             ? "text-[48px]"
                                             : "text-[56px]"
-                                    }`}
+                                    }` }
                                 >
-                                    {doodle.label}
+                                    { doodle.label }
                                 </p>
                             </div>
                         </div>
                     </motion.div>
-                ))}
+                )) }
             </div>
         </section>
     );

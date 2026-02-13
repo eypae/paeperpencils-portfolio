@@ -152,7 +152,7 @@
     }
 
     body {
-        @apply font-quicksand bg-background text-foreground;
+        @apply font-quicksand bg-background text-[#2e3e10];
     }
 
     main {
