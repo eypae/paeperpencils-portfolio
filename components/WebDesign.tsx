@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { TbArrowBigRightFilled  } from "react-icons/tb";
+import { TbArrowBigRightFilled } from "react-icons/tb";
 
 import imgStrengthCorpLogo from '@/public/images/str-corp-logo.svg';
 import imgPhones from '@/public/images/str-corp-phones.svg';
@@ -34,7 +34,8 @@ const WebDesign = () => {
                         ">
 
                             {/* Left Side: Content */ }
-                            <div className="p-6 lg:p-10 flex-1 shrink flex flex-col justify-center relative z-10">
+                            <div
+                                className="p-6 lg:p-10 flex-1 shrink flex flex-col justify-center relative z-10 group-hover:opacity-25">
                                 <Image
                                     src={ imgStrengthCorpLogo }
                                     alt="Strength Corp"
@@ -56,7 +57,7 @@ const WebDesign = () => {
 
                             {/* Right Side: Image Container */ }
                             <div
-                                className="flex-1 relative min-h-75 md:min-h-0 overflow-hidden hidden min-[476px]:block">
+                                className="flex-1 relative min-h-75 md:min-h-0 overflow-hidden hidden min-[476px]:block group-hover:opacity-25">
                                 <Image
                                     src={ imgPhones }
                                     alt="Mobile App"
@@ -66,24 +67,26 @@ const WebDesign = () => {
 
                             {/* 1. Gradient Overlay (Mimicking DoodleGrid) */ }
                             <div className="
-                                absolute inset-0 pointer-events-none
-                                bg-linear-to-b from-[rgba(0,0,0,0.05)] to-[rgba(46,62,16,0.3)]
+                                absolute inset-0 pointer-events-none bg-[rgba(0,0,0,0.6)]
                                 opacity-0 group-hover:opacity-100 transition-opacity duration-300
                                 z-20
                             "/>
 
                             {/* 2. Sliding Label (Mimicking DoodleGrid) */ }
-                            <div className="absolute inset-0 overflow-hidden pointer-events-none z-30">
-                                <div className="
-                                    absolute left-[4.65%] bottom-2
-                                    transform translate-y-full
-                                    group-hover:translate-y-[-15%]
-                                    transition-transform duration-300
-                                    font-sugar-peachy leading-none text-white
-                                    text-[42px] sm:text-[72px] flex items-center justify-start gap-2
-                                ">
+                            <div className="absolute inset-0 overflow-hidden pointer-events-none z-30 transform
+                                translate-y-full group-hover:translate-y-0 transition-transform duration-300 text-white
+                                flex flex-col justify-between p-6 lg:p-10"
+                            >
+                                {/* Description - No longer absolute, let flexbox handle it */ }
+                                <p className="font-quicksand text-[18px] sm:text-[22px] lg:text-[24px] font-semibold leading-snug">
+                                    Strength Corp is a Singapore-based fitness startup providing online coaching
+                                    services.
+                                </p>
+
+                                {/* Footer Link - No longer absolute, sits at the bottom due to justify-between */ }
+                                <div className="font-quicksand font-bold leading-none text-[42px] sm:text-[48px] flex items-center justify-start gap-3">
                                     <p>View Website</p>
-                                    <TbArrowBigRightFilled className={"h-8 sm:h-12"}/>
+                                    <TbArrowBigRightFilled className="mt-2 h-6 sm:h-8 w-auto"/>
                                 </div>
                             </div>
                         </div>
