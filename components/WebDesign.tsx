@@ -56,7 +56,7 @@ const WebDesign = () => {
                             {/* Right Side: Image Container */ }
                             <div className="overflow-hidden hidden min-[476px]:block group-hover:opacity-25">
                                 <Image
-                                    src={ imgPhones } s
+                                    src={ imgPhones }
                                     alt="Mobile App"
                                     className="absolute 2xl:right-0 xl:right-[-20%] lg:right-[-40%] md:right-0 min-[600px]:right-[-20%] right-[-40%]"
                                 />
