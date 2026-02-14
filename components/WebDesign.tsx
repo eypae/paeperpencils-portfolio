@@ -17,29 +17,27 @@ const WebDesign = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 {/* Left Card Placeholder */ }
                 <div
-                    className="lg:col-span-4 bg-[#a1bc98] border-3 border-black rounded-2xl h-100 shadow-[0_15px_0_rgba(0,0,0,0.2)]">
+                    className="lg:col-span-5 bg-[#a1bc98] border-3 border-black rounded-2xl h-100 shadow-[0_15px_0_rgba(0,0,0,0.2)]">
                 </div>
 
                 {/* Strength Corp Banner */ }
-                <motion.div
-                    className="lg:col-span-8 group relative cursor-pointer"
-                >
+                <motion.div className="lg:col-span-7 group relative cursor-pointer">
                     <Link href="https://www.strengthcorp.com.sg/" target="_blank">
                         {/* Main Container (Styled like Doodle Card) */ }
                         <div className="
                             relative bg-[#f2ecd4] border-4 border-black rounded-2xl 
-                            overflow-hidden shadow-[0_15px_0_rgba(0,0,0,0.2)] 
+                            overflow-hidden shadow-[0_15px_0_rgba(0,0,0,0.2)]
                             flex flex-row items-stretch transition-all duration-300
-                            group-hover:-translate-y-2 group-hover:shadow-[0_18px_0_rgba(0,0,0,0.2)]
+                            group-hover:-translate-y-2 group-hover:shadow-[0_18px_0_rgba(0,0,0,0.2)] md:h-100
                         ">
 
                             {/* Left Side: Content */ }
                             <div
-                                className="p-6 lg:p-10 flex-1 shrink flex flex-col justify-center relative z-10 group-hover:opacity-25">
+                                className="p-10 lg:p-12 flex-1 shrink flex flex-col justify-center relative z-10 group-hover:opacity-25">
                                 <Image
                                     src={ imgStrengthCorpLogo }
                                     alt="Strength Corp"
-                                    className="w-56 lg:w-72"
+                                    className="w-42 lg:w-56"
                                 />
                                 <div className="relative mt-4">
                                     <h3 className="font-league-spartan font-bold text-5xl lg:text-6xl text-[#272b3a] leading-[0.85] tracking-tighter">
@@ -56,12 +54,11 @@ const WebDesign = () => {
                             </div>
 
                             {/* Right Side: Image Container */ }
-                            <div
-                                className="flex-1 relative min-h-75 md:min-h-0 overflow-hidden hidden min-[476px]:block group-hover:opacity-25">
+                            <div className="overflow-hidden hidden min-[476px]:block group-hover:opacity-25">
                                 <Image
-                                    src={ imgPhones }
+                                    src={ imgPhones } s
                                     alt="Mobile App"
-                                    className="absolute max-[526px]:top-1/2 max-[526px]:-translate-y-1/2"
+                                    className="absolute 2xl:right-0 xl:right-[-20%] lg:right-[-40%] md:right-0 min-[600px]:right-[-20%] right-[-40%]"
                                 />
                             </div>
 
@@ -84,7 +81,8 @@ const WebDesign = () => {
                                 </p>
 
                                 {/* Footer Link - No longer absolute, sits at the bottom due to justify-between */ }
-                                <div className="font-quicksand font-bold leading-none text-[42px] sm:text-[48px] flex items-center justify-start gap-3">
+                                <div
+                                    className="font-quicksand font-bold leading-none text-[42px] sm:text-[48px] flex items-center justify-start gap-3">
                                     <p>View Website</p>
                                     <TbArrowBigRightFilled className="mt-2 h-6 sm:h-8 w-auto"/>
                                 </div>
